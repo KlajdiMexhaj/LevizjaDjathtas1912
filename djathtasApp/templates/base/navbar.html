@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
       <!-- Navbar brand aligned to the left -->
-      <a class="navbar-brand"  href="#"><img src="{% static 'img/logo_site.png' %}" alt=""></a>
+      <a class="navbar-brand"  href="{% url 'home' %}"><img src="{% static 'img/logo_site_final.jpg' %}" alt=""></a>
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,25 +16,22 @@
                 <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Kush Jemi</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'aboutus' %}">Kush Jemi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Të reja</a>
+                <a class="nav-link active" aria-current="page" href="#">Të reja</a>
               </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Blog</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Video</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Anetarësohu</a>
           </li>
+          <form class="d-flex ms-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Video</a>
-          </li>
-          <li class="nav-item">
-           <a href="{% url 'home' %}"> <button type="button" class="btn btn-primary">Dhuro</button></a>
+           <a href="#"> <button type="button" class="btn btn-primary">Dhuro</button></a>
           </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,13 +44,11 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li> -->
+          
         </ul>
         
         <!-- Search form aligned to the right -->
-        <!-- <form class="d-flex ms-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
+
       </div>
     </div>
   </nav>
