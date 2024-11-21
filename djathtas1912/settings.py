@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^h(**ze4-#_d14=&x7hlp0t1&rkpxa31*%fi0(()6b&93#k1b+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['djathtas1912.pythonanywhere.com','127.0.0.1']
+ALLOWED_HOSTS = ['djathtas1912.pythonanywhere.com','127.0.0.1','localhost']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'djathtasApp',
     'django_ckeditor_5',
+    'defender',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'defender.middleware.FailedLoginMiddleware',
 
 ]
 
@@ -101,6 +104,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+
+
+DEFENDER_REDIS_URL = 'redis://localhost:6379/0'
+
+
 
 
 # Internationalization
