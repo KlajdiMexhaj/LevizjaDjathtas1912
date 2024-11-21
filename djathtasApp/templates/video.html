@@ -14,14 +14,13 @@
             <div class="video-card">
                 <div class="video-wrapper">
                     <!-- Embed the video using the URL from the EmbedVideoField -->
-                    <iframe src="{% video video.video 'small' %}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/{{ video.video.url|cut:'https://www.youtube.com/watch?v=' }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                 </div>
                 <h3>{{ video.name }}</h3>
                 <!-- <p>Published on: {{ video.published_at|date:"F j, Y" }}</p> -->
             </div>
-            <!-- <p>{{ video.video.url }}</p> -->
-            <!-- {% video video.video 'small' %} -->
+
         {% endfor %}
     </div>
 </div>
