@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^h(**ze4-#_d14=&x7hlp0t1&rkpxa31*%fi0(()6b&93#k1b+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['djathtas1912.pythonanywhere.com','127.0.0.1','localhost']
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'djathtasApp',
     'django_ckeditor_5',
+    'embed_video',
     
 ]
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "base/index.html" %}
+{% block title %} Video {% endblock %}
+{% load static %}
+{% load embed_video_tags %}
+
+
+{% block content %}
+
+
+<div class="video-section">
+    <div class="video-container">
+        {% for video in video_upload %}
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- Embed the video using the URL from the EmbedVideoField -->
+                    <iframe src="{% video video.video 'small' %}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                </div>
+                <h3>{{ video.name }}</h3>
+                <!-- <p>Published on: {{ video.published_at|date:"F j, Y" }}</p> -->
+            </div>
+            <!-- <p>{{ video.video.url }}</p> -->
+            <!-- {% video video.video 'small' %} -->
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
