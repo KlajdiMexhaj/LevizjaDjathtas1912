@@ -8,7 +8,7 @@ from embed_video.fields import EmbedVideoField
 
 class Video(models.Model):
     name = models.CharField(max_length=50)
-    video = EmbedVideoField()
+    url = models.URLField(blank=True,null=True)
     published_at = models.DateTimeField(default=timezone.now)
 
     
