@@ -30,7 +30,7 @@ class Anetarsimi(models.Model):
     vendlindja = models.CharField(max_length=100)
     datelindja = models.DateField()
     nid = models.CharField(max_length=20, unique=True)
-    gjinia = models.CharField(max_length=10, choices=[('male', 'Mashkull'), ('female', 'Femër')])
+    gjinia = models.CharField(max_length=10, choices=[('male', 'Mashkull'), ('female', 'Femër'),('other','Tjeter')])
     arsimi = models.CharField(max_length=200)
     punesimi = models.CharField(max_length=200)
     numer_telefoni = models.CharField(max_length=15)
