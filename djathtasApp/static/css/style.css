@@ -316,6 +316,187 @@
 
 
 
+
+
+/* --------------------------------------------CONTACT SECTION------------------------------------------------------------- */
+
+
+
+
+
+/* Main contact section */
+.contact-info {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+    text-align: center;
+    border-top: 5px solid #007BFF;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1s ease-out;
+}
+
+.contact-info h2 {
+    color: #ffffff;
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+/* Layout for contact info and map */
+.contact-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Contact information section */
+.contact-details {
+    flex: 1;
+    max-width: 500px;
+    padding-right: 20px;
+    animation: slideInLeft 1s ease-out;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-item .icon {
+    font-size: 2.5em;
+    color: #007BFF;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover .icon {
+    color: #FFD700; /* Golden color on hover */
+}
+
+.contact-item .info h3 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.contact-item .info p {
+    font-size: 1.2em;
+    color: #cccccc;
+}
+
+/* Location map section */
+.location-map {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+    padding-left: 20px;
+    animation: slideInRight 1s ease-out;
+}
+
+.location-map h3 {
+    color: #ffffff;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.map-container iframe {
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 300px;
+    transition: transform 0.3s ease;
+}
+
+.map-container iframe:hover {
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design for mobile */
+@media (max-width: 768px) {
+    .contact-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .contact-details, .location-map {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .contact-item .info h3 {
+        font-size: 1.6em;
+    }
+
+    .contact-item .info p {
+        font-size: 1.1em;
+    }
+
+    .map-container iframe {
+        height: 350px;
+    }
+}
+
+
+
+
+
+
+
 /* ------------------------------------------ABOUT US PAGE-------------------------------------------------------------------- */
 
 
@@ -619,6 +800,86 @@
 
 /* ---------------------------------------------------VIDEO PAGE------------------------------------------ */
 /* General video section styling */
+.title-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #f9f9f9, #fff);
+    border-bottom: 2px solid #eee;
+    animation: fadeInTitle 2s ease-out;
+}
+
+.page-title {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 4px;
+    color: #333;
+}
+
+.page-title .text-highlight {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff6f61, #ff856d, #ff9d79);
+    background-clip: text;
+    -webkit-background-clip: text; /* For Chrome, Safari 3+, and iOS */
+    -moz-background-clip: text; /* For older Firefox versions */
+    -o-background-clip: text;   /* Opera support (older versions) */
+    -ms-background-clip: text; /* Older IE support (partial) */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for text color */
+    animation: colorShift 4s ease infinite;
+    position: relative;
+}
+
+.page-title .text-highlight::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff6f61, #ff856d, #ff9d79);
+    border-radius: 2px;
+    animation: underlineSlide 3s ease-in-out infinite;
+}
+
+@keyframes fadeInTitle {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes colorShift {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+
+@keyframes underlineSlide {
+    0%, 100% { transform: scaleX(0); }
+    50% { transform: scaleX(1); }
+}
+
+/* Responsive Design for Title */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 2em;
+        letter-spacing: 2px;
+    }
+    .page-title .text-highlight::after {
+        height: 3px;
+    }
+}
+
+
+
 .video-section {
     margin: 20px;
     padding: 20px;
@@ -677,3 +938,322 @@
         width: 100%;
     }
 }
+
+
+
+
+/* ------------------------------------ANETARSIMI PAGE STYLE------------------------------------------------------------------------ */
+
+/* Form container */
+.form-container {
+    margin: 60px auto;
+    max-width: 1200px;
+    background: #ffffff;
+    padding: 45px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    border-top: 10px solid #007bff;
+}
+
+/* Form heading */
+.form-container h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 35px;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Add underline effect to heading */
+.form-container h1::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: #007bff;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Form group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+.form-group label {
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 8px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+/* Inputs and selects */
+.form-group input,
+.form-group select {
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background: #f4f7fa;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Input hover and focus effects */
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #0056b3;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #007bff;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
+/* Placeholder styling */
+.form-group input::placeholder,
+.form-group select::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Button styling */
+.submit-btn {
+    grid-column: span 2; /* Full-width button */
+    padding: 16px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    width: 100%;
+    margin-top: 35px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+    background: linear-gradient(135deg, #0056b3, #007bff);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    /* Adjust form layout to single column */
+    .form-container .form-container-content {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    /* Adjust button to full width */
+    .submit-btn {
+        grid-column: span 1; /* Adjust button to full width */
+    }
+
+    /* Adjust form heading font size */
+    .form-container h1 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    /* Adjust label and input size */
+    .form-group label {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        padding: 16px;
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+/* Paragraph styling */
+
+.form-group.paragraph p {
+    font-size: 20px;
+    line-height: auto;
+    margin: 40px auto;
+    font-weight: 500;
+    max-width: 1200px;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease, background 0.4s ease;
+    grid-template-columns: repeat(1,1fr);
+}
+
+/* Hover effect with subtle scale and glow */
+.form-group.paragraph p:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(52, 152, 219, 0.7);
+}
+
+/* Animated background shimmer */
+.form-group.paragraph p::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    transform: skewX(-25deg);
+    transition: left 0.4s ease;
+    z-index: 0;
+}
+
+/* Move shimmer on hover */
+.form-group.paragraph p:hover::before {
+    left: 100%;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .form-group.paragraph p {
+        font-size: 16px;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 90%;
+    }
+}
+
+
+
+
+
+/* Signature and date styling */
+.form-group.signature,
+.form-group.date {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.form-group.signature label,
+.form-group.date label {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.form-group.signature input,
+.form-group.date input {
+    padding: 14px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: #f4f7fa;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.form-group.signature input:hover,
+.form-group.date input:hover {
+    border-color: #0056b3;
+}
+
+.form-group.signature input:focus,
+.form-group.date input:focus {
+    outline: none;
+    border-color: #007bff;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
+
+
+/* Adjust for mobile responsiveness */
+@media (max-width: 768px) {
+
+    .form-group.signature input,
+    .form-group.date input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .form-group.signature label,
+    .form-group.date label {
+        font-size: 14px;
+    }
+
+}
+
+.form-strucure{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+
+    .form-strucure{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+}
+
+.signiture-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+
+    .signiture-content{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+}
+
+
+
+
+/* - */

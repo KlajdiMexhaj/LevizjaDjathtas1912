@@ -6,4 +6,5 @@ urlpatterns = [
     path("",views.home,name="home"),
     path("aboutus/",views.aboutus,name="aboutus"),
     path("video/",views.video,name="video"),
+    path("anetarsimi/",views.anetarsimi,name="anetarsimi"),
 ]

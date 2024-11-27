@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+{% extends "base/index.html" %}
+{% block title %} Anëtarësohu {% endblock %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="form-container">
+    <h1>FORMULAR ANËTARËSIMI</h1>
+    
+    <!-- Update the form tag with action and method -->
+    <form class="form-container-content" method="POST" action="{% url 'anetarsimi' %}">
+        {% csrf_token %}
+<div class="form-strucure">
+        <div class="form-group">
+            <label for="emer">Emër</label>
+            <input type="text" id="emer" name="emer" placeholder="Shkruani emrin tuaj" required>
+        </div>
+        <div class="form-group">
+            <label for="mbiemer">Mbiemër</label>
+            <input type="text" id="mbiemer" name="mbiemer" placeholder="Shkruani mbiemrin tuaj" required>
+        </div>
+        <div class="form-group">
+            <label for="atesi">Atësi</label>
+            <input type="text" id="atesi" name="atesi" placeholder="Shkruani emrin e babait" required>
+        </div>
+        <div class="form-group">
+            <label for="mamesi">Mamësi</label>
+            <input type="text" id="mamesi" name="mamesi" placeholder="Shkruani emrin e nënës" required>
+        </div>
+        <div class="form-group">
+            <label for="vendlindja">Vendlindja</label>
+            <input type="text" id="vendlindja" name="vendlindja" placeholder="Shkruani vendlindjen tuaj" required>
+        </div>
+        <div class="form-group">
+            <label for="datelindja">Datëlindja</label>
+            <input type="date" id="datelindja" name="datelindja" required>
+        </div>
+        <div class="form-group">
+            <label for="nid">Numri personal NID</label>
+            <input type="text" id="nid" name="nid" placeholder="Shkruani NID-në tuaj" required>
+        </div>
+        <div class="form-group">
+            <label for="gjinia">Gjinia</label>
+            <select id="gjinia" name="gjinia" required>
+                <option value="" disabled selected>Gjinia</option>
+                <option value="male">Mashkull</option>
+                <option value="female">Femër</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="arsimi">Arsimi</label>
+            <input type="text" id="arsimi" name="arsimi" placeholder="Shkruani nivelin tuaj të arsimit" required>
+        </div>
+        <div class="form-group">
+            <label for="punesimi">Punësimi</label>
+            <input type="text" id="punesimi" name="punesimi" placeholder="Shkruani vendin e punës" required>
+        </div>
+        <div class="form-group">
+            <label for="numer-telefoni">Numër Telefoni</label>
+            <input type="tel" id="numer-telefoni" name="numer-telefoni" placeholder="Shkruani numrin tuaj të telefonit" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Shkruani email-in tuaj" required>
+        </div>
+        <div class="form-group">
+            <label for="facebook">Facebook</label>
+            <input type="text" id="facebook" name="facebook" placeholder="Username i Facebook-ut">
+        </div>
+        <div class="form-group">
+            <label for="instagram">Instagram</label>
+            <input type="text" id="instagram" name="instagram" placeholder="Username i Instagram-it">
+        </div>
+        <div class="form-group">
+            <label for="x">X (Twitter)</label>
+            <input type="text" id="x" name="x" placeholder="Username i X (Twitter)">
+        </div>
+        <div class="form-group">
+            <label for="youtube">YouTube</label>
+            <input type="text" id="youtube" name="youtube" placeholder="Username i YouTube">
+        </div>
+        <div class="form-group">
+            <label for="qarku">Qarku</label>
+            <input type="text" id="qarku" name="qarku" placeholder="Shkruani qarkun tuaj" required>
+        </div>
+        <div class="form-group">
+            <label for="bashkia">Bashkia</label>
+            <input type="text" id="bashkia" name="bashkia" placeholder="Shkruani bashkinë tuaj" required>
+        </div>
+        </div>
+        <div class="form-group paragraph">
+            <p>
+                Me nënshkrimin e këtij formulari anëtarësimi, deklaroj se jam dakord me Kushtet e përdorimit dhe jap pëlqimin/miratimin për përdorimin e të dhënave personale, të cilat do të përpunohen në përputhje të plotë me përcaktimet e Ligjit numër 9887, datë 10.03.2008 “Për mbrojtjen e të Dhënave Personale” të ndryshuar, dhe akteve nënligjore të dala në zbatim të tij.
+            </p>
+        </div>
+        <div class="form-strucure">
+        <div class="form-group">
+            <label for="emer-mbiemer">EMËR MBIEMËR</label>
+            <input type="text" id="emer-mbiemer" name="emer-mbiemer" placeholder="Shkruani emrin dhe mbiemrin" required>
+        </div>
+        <div class="form-group">
+            <label for="date">DATË</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+</div>
+        
+
+        <button type="submit" class="submit-btn">Dërgo Formularin</button>
+    </form>
+</div>
+
+
+{% endblock %}

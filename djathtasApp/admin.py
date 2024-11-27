@@ -4,3 +4,11 @@ from .models import *
 
 
 admin.site.register(Video)
+
+
+class AnetarsimiAdmin(admin.ModelAdmin):
+    list_display = ('emer', 'mbiemer', 'email', 'datelindja', 'gjinia')
+    list_display_links = ('emer', 'mbiemer', 'email', 'datelindja', 'gjinia')
+    search_fields = ('emer', 'mbiemer', 'email')
+    list_filter = ('gjinia', 'qarku', 'bashkia')
+admin.site.register(Anetarsimi,AnetarsimiAdmin)
