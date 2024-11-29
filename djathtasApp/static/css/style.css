@@ -323,27 +323,24 @@
 
 
 
-
 /* Main contact section */
 .contact-info {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+    background-color: #f0f4f8;
     text-align: center;
-    border-top: 5px solid #007BFF;
+    border-top: 5px solid #6C63FF;
     position: relative;
     z-index: 1;
-    animation: fadeIn 1s ease-out;
 }
 
 .contact-info h2 {
-    color: #ffffff;
-    font-size: 2.8em;
-    font-weight: bold;
+    color: #3a3a3a;
+    font-size: 2.5em;
+    font-weight: 700;
     margin-bottom: 40px;
-    letter-spacing: 2px;
     text-transform: uppercase;
+    letter-spacing: 1px;
     position: relative;
-    z-index: 1;
 }
 
 /* Layout for contact info and map */
@@ -352,7 +349,7 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 30px;
     margin-top: 40px;
 }
 
@@ -361,107 +358,85 @@
     flex: 1;
     max-width: 500px;
     padding-right: 20px;
-    animation: slideInLeft 1s ease-out;
+    animation: fadeIn 1s ease-out;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     padding: 20px;
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-item:hover {
-    transform: translateX(10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .contact-item .icon {
     font-size: 2.5em;
-    color: #007BFF;
+    color: #6C63FF;
     margin-right: 20px;
     transition: color 0.3s ease;
 }
 
 .contact-item:hover .icon {
-    color: #FFD700; /* Golden color on hover */
+    color: #3DB2FF;
 }
 
 .contact-item .info h3 {
     font-size: 1.8em;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    font-weight: 600;
+    color: #2d2d2d;
+    margin-bottom: 5px;
 }
 
 .contact-item .info p {
-    font-size: 1.2em;
-    color: #cccccc;
+    font-size: 1.1em;
+    color: #4f4f4f;
 }
 
 /* Location map section */
 .location-map {
     flex: 1;
     max-width: 500px;
-    text-align: left;
     padding-left: 20px;
-    animation: slideInRight 1s ease-out;
+    animation: fadeIn 1s ease-out;
 }
 
 .location-map h3 {
-    color: #ffffff;
+    color: #3a3a3a;
     font-size: 1.8em;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 20px;
     text-transform: uppercase;
 }
 
 .map-container iframe {
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     width: 100%;
     height: 300px;
     transition: transform 0.3s ease;
 }
 
 .map-container iframe:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 /* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(40px);
     }
     to {
         opacity: 1;
-    }
-}
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
@@ -478,18 +453,29 @@
         text-align: center;
     }
 
+    .contact-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-item .icon {
+        margin-bottom: 15px;
+    }
+
     .contact-item .info h3 {
-        font-size: 1.6em;
+        font-size: 1.5em;
     }
 
     .contact-item .info p {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .map-container iframe {
         height: 350px;
     }
 }
+
 
 
 
