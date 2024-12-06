@@ -1,6 +1,7 @@
 from django.utils import timezone
 from django.db import models
 from embed_video.fields import EmbedVideoField
+from django_ckeditor_5.fields import CKEditor5Field
 from urllib.parse import urlparse, parse_qs
 # Create your models here.
 
@@ -49,3 +50,26 @@ class Anetarsimi(models.Model):
     
 
 
+class ArtikujInfomues(models.Model):
+    title = models.CharField(max_length=20)
+    description = CKEditor5Field('Description', config_name='default')
+    image = models.ImageField(upload_to='artikujt_images/', blank=True, null=True)
+    video = EmbedVideoField( blank=True,null=True)
+    
+    def __str__(self):
+        return self.title
+    
+class ArtikujImage(models.Model):
+    artikuj = models.ForeignKey(ArtikujInfomues,related_name='images',on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='artikujt_images/')
+
+    def __str__(self):
+        return f"Images for {self.artikuj.title}"
+    
+
+class ArtikujVideo(models.Model):
+    artikuj = models.ForeignKey(ArtikujInfomues, related_name='videos', on_delete=models.CASCADE)
+    video = EmbedVideoField(blank=True, null=True)
+
+    def __str__(self):
+        return f"Video for{self.artikuj.title}"

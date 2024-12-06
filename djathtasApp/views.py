@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    context = {}
+    latest_videos = Video.objects.all()[:10]
+    context = {"latest_videos": latest_videos}
     return render(request,"home.html",context)
 
 
@@ -42,7 +43,17 @@ def anetarsimi(request):
             emer_mbiemer=request.POST.get('emer-mbiemer'),
             date=request.POST.get('date')
         )
-        return HttpResponse("Formulari u dërgua me sukses!")
+        return redirect('thank_you')  # Redirect to the thank you page
     context = {}
     return render(request,"anetarsimi.html",context)
 
+
+def thank_you(request):
+    return render(request, "thank_you.html")
+
+
+
+def artikujinfomues(request):
+    artikujinfomues = ArtikujInfomues.objects.all()
+    context = {"artikujinfomues": artikujinfomues}
+    return render(request, "artikujtinfomues.html", context)

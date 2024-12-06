@@ -130,7 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -139,3 +139,36 @@ MEDIA_ROOT = BASE_DIR / "media"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# CKEDITOR_5_CONFIGS
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': [
+            'heading', '|', 'bold', 'italic', 'underline', 'strikethrough',
+            'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
+            'alignment', 'fontColor', 'fontBackgroundColor', 'removeFormat',
+            '|', 'insertTable', 'mediaEmbed', 'undo', 'redo'
+        ],
+        'height': '300px',
+        'width': '100%',
+        'fontColor': {
+            'colors': [
+                {
+                    'color': 'black',
+                    'label': 'Black'
+                }
+            ],
+            'defaultColor': 'black'
+        },
+        'styles': [
+            {
+                'element': 'p',
+                'styles': {
+                    'color': 'black'
+                }
+            }
+        ]
+    },
+}

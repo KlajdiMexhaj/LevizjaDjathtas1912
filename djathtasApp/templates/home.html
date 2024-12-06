@@ -2,6 +2,7 @@
 {% extends "base/index.html" %}
 {% block title %} Home {% endblock %}
 {% load static %}
+{% load embed_video_tags %} 
 
 {% block content %}
 
@@ -10,6 +11,13 @@
  <!-- -------------------------------------------------------------INTO SECTION---------------------------------------------------- -->
     <!-- Hero section with title and button -->
     <div class="hero-section">
+        <!-- Video background -->
+        <video autoplay loop muted playsinline >
+            <source src="{% static 'img/konferencaNew.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Content -->
         <h1>Join Djathas 1912 for a Better Future</h1>
         <button class="btn">Të reja</button>
     </div>
@@ -55,17 +63,40 @@
             <a href="{% url 'aboutus' %}" class="btn">Kush Jemi</a>
         </div>
         <div class="about-image">
-            <img src="{% static 'img/logo_site_final.jpg' %}" alt="About Us Image">
+            <img src="{% static 'img/foto5.png' %}" alt="About Us Image">
         </div>
     </div>
 </section>
 
 
 
+<!-- <section class="videosliderhome">
+    <h2 class="slider-title">Latest Videos</h2>
+    <div class="video-slider">
+        <div class="slider-container">
+            {% for video in latest_videos %}
+            <div class="slide">
+                <div class="video-wrapper">
+                    {% video video.url 'small' %}
+                </div>
+                <div class="overlay">
+                    <h4>{{ video.name }}</h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+
+
+<br><br> -->
 
 <section class="contact-info">
     <div class="container">
-        <h2>JU MIREPRESIM...</h2>
+        <h2>KONTAKT</h2>
         <div class="contact-layout">
             <div class="contact-details">
                 <a href="" style="text-decoration: none;">
@@ -85,8 +116,8 @@
                         <i class="fas fa-phone"></i>
                     </div>
                     <div class="info">
-                        <h3>Phone</h3>
-                        <p>+123 456 7890</p>
+                        <h3>Numri i telefonit</h3>
+                        <p> +355 69 701 4504</p>
                     </div>
                 </div>
                 </a>
@@ -95,8 +126,8 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="info">
-                        <h3>Address</h3>
-                        <p>123 Example Street, City, Country</p>
+                        <h3>Adresa</h3>
+                        <p>Rruga Njazi Demi Nr. 1</p>
                     </div>
                 </div>
             </div>

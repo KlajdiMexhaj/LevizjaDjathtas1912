@@ -12,3 +12,6 @@ class AnetarsimiAdmin(admin.ModelAdmin):
     search_fields = ('emer', 'mbiemer', 'email')
     list_filter = ('gjinia', 'qarku', 'bashkia')
 admin.site.register(Anetarsimi,AnetarsimiAdmin)
+admin.site.register(ArtikujInfomues)
+admin.site.register(ArtikujImage)
+admin.site.register(ArtikujVideo)

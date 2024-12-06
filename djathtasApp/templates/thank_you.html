@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "base/index.html" %}
+{% block title %}Faleminderit{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="thank-you-container">
+    <div class="thank-you-message">
+        <h1>Faleminderit!</h1>
+        <p>Formulari juaj u dërgua me sukses. Do të kontaktoheni sa më shpejt të jetë e mundur.</p>
+        <p class="subtext">Ne vlerësojmë kohën tuaj dhe informacionin që ndatë me ne.</p>
+        <a href="{% url 'home' %}" class="home-button">Kthehu në faqen kryesore</a>
+    </div>
+</div>
+{% endblock %}
