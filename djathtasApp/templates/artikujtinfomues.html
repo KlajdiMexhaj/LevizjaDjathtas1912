@@ -8,18 +8,23 @@
 
 {% block content %}
 
-<div class="container">
-    <h1>Artikujt Informues</h1>
-    <div class="grid">
-        {% for artikuj in artikujinfomues %}
-        <a href="#" class="card">
-            {% if artikuj.image %}
-            <img src="{{ artikuj.image.url }}" alt="{{ artikuj.title }}">
-        {% endif %}
-            <h2>{{ artikuj.title }}</h2>
-        </a>
-        {% endfor %}
+<section class="artikujtinfomues">
+    <div class="container">
+        <h1>Artikujt Informues</h1>
+        <div class="grid">
+            {% for artikuj in artikujinfomues %}
+            <a href="{% url 'artikujtinfomues_detail' artikuj.pk %}" style="text-decoration: none;">
+                <div class="card custom-card">
+                    {% if artikuj.image %}
+                    <img src="{{ artikuj.image.url }}" class="card-img-top" alt="{{ artikuj.title }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ artikuj.title }}</h5>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
     </div>
-</div>
-
+</section>
 {% endblock %}

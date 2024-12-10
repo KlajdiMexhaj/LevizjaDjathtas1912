@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends "base/index.html" %}
+{% block title %} Artikull Detail {% endblock %}
+{% load static %}
+{% load embed_video_tags %}
+
+{% block content %}
+
+<br><br>
+
+<div class="container">
+    <div class="artikull-detail">
+        <!-- Title -->
+        <h1 class="title">{{ artikull.title }}</h1>
+<!-- Main Image -->
+        <div class="main-image">
+            <img src="{{ artikull.image.url }}" alt="{{ artikull.title }}">
+        </div>        
+        <!-- Description -->
+        <div class="description">
+            {{ artikull.description|safe }}
+        </div>
+        
+        <!-- Additional Images -->
+        {% if artikull.images.all %}
+        <div class="additional-images">
+            {% for image in artikull.images.all %}
+            <div class="image-item">
+                <img src="{{ image.image.url }}" alt="{{ artikull.title }}">
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <!-- Videos -->
+        {% if artikull.videos.all %}
+        <div class="videos">
+            {% for video in artikull.videos.all %}
+            <div class="video-container">
+                {% video video.video as v %}
+                <iframe src="{{ v.url }}" frameborder="0" allowfullscreen></iframe>
+                {% endvideo %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

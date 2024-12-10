@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import *
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 def home(request):
@@ -57,3 +58,9 @@ def artikujinfomues(request):
     artikujinfomues = ArtikujInfomues.objects.all()
     context = {"artikujinfomues": artikujinfomues}
     return render(request, "artikujtinfomues.html", context)
+
+
+def artikujtinfomues_detail(request, pk):
+    artikull = get_object_or_404(ArtikujInfomues, pk=pk)
+    context = {"artikull": artikull}
+    return render(request, "artikujtinfomues_detail.html", context)
