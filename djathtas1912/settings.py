@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'djathtasApp',
     'django_ckeditor_5',
     'embed_video',
+    'admin_honeypot',
     
 ]
 
