@@ -1518,41 +1518,129 @@ button.next {
 
 
 
+/* Container styling */
 .artikujtinfomues .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
     gap: 20px;
     padding: 20px;
 }
-/* Custom card styling */
+.artikujtinfomues h1 {
+    font-size: 2.5rem; /* Larger font size for prominence */
+    color: #333; /* Dark gray color */
+    text-align: center; /* Center align the header */
+    margin-bottom: 20px; /* Add spacing below the header */
+    text-transform: uppercase; /* Make text uppercase */
+    letter-spacing: 2px; /* Add spacing between letters */
+    background: linear-gradient(to right, #007bff, #00c6ff); /* Gradient text effect */
+    background-clip: text; /* Standard property for background clip */
+    -webkit-background-clip: text; /* Webkit-specific property for compatibility */
+    -webkit-text-fill-color: transparent; /* Make background clip visible */
+    animation: fadeInHeader 1s ease; /* Smooth fade-in animation */
+}
+
+
+@keyframes fadeInHeader {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Slide from above */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+/* Card styling */
 .custom-card {
-    width: 300px; /* Fixed width */
-    height: 500px; /* Fixed height */
+    background-color: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a modern look */
+    overflow: hidden; /* Ensures content stays within the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation on hover */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    justify-content: space-between; /* Space between image and body */
-    overflow: hidden;
-    border: 1px solid #ddd; /* Optional: Add border for visibility */
-    border-radius: 5px; /* Optional: Add rounded corners */
-    margin: 10px; /* Add spacing between cards */
+    align-items: center;
 }
 
+.custom-card:hover {
+    transform: translateY(-10px); /* Lift the card slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Image styling */
 .custom-card img {
-    width: 100%; /* Make image span the card width */
- height: 300px;/* Fixed height for the image */
-    object-fit: cover;
+    width: 100%; /* Make image fill the card */
+    height: 250px; /* Fixed height for consistent layout */
+    object-fit: cover; /* Maintain aspect ratio and fill the area */
+    transition: transform 0.5s ease; /* Smooth zoom effect on hover */
 }
 
+.custom-card:hover img {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Card body styling */
 .custom-card .card-body {
-    padding: 10px; /* Reduce padding for a compact design */
-    text-align: center; /* Center text */
-    flex: 1; /* Allow text to grow if needed */
+    padding: 15px;
+    text-align: center;
+    flex: 1; /* Allow content to grow if needed */
 }
 
 .custom-card .card-title {
-    font-size: 1rem; /* Adjust font size for title */
-    margin: 0; /* Remove extra margins */
+    font-size: 1.2rem; /* Slightly larger font size for better readability */
+    font-weight: bold; /* Bold title for emphasis */
+    color: #333; /* Darker text color */
+    margin: 10px 0; /* Add spacing around the title */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.custom-card:hover .card-title {
+    color: #007bff; /* Change title color on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .artikujtinfomues .grid {
+        grid-template-columns: repeat(1, 1fr); /* Single column on smaller screens */
+    }
+
+    .custom-card {
+        height: auto; /* Allow cards to adjust height on smaller screens */
+    }
+
+    .custom-card img {
+        height: 200px; /* Reduce image height for smaller screens */
+    }
+
+    .custom-card .card-title {
+        font-size: 1rem; /* Smaller font size for mobile devices */
+    }
+}
+
+/* Button-like animation for the card */
+.custom-card:active {
+    transform: translateY(2px); /* Slight "press" effect on click */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Reduced shadow when pressed */
+}
+
+
+
+/* Smooth fade-in effect for cards */
+.custom-card {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
 }
 
 
@@ -1649,9 +1737,9 @@ button.next {
 
 .main-image img {
     width: 100%;
-    max-width: 1000px;
+    max-width: 900px;
     height: auto; /* Maintain aspect ratio */
-    max-height: 500px;
+    max-height:550px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;

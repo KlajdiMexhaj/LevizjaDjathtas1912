@@ -51,10 +51,9 @@ class Anetarsimi(models.Model):
 
 
 class ArtikujInfomues(models.Model):
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=100)
     description = CKEditor5Field('Description', config_name='default')
     image = models.ImageField(upload_to='artikujt_images/', blank=True, null=True)
-    video = EmbedVideoField( blank=True,null=True)
     
     def __str__(self):
         return self.title
