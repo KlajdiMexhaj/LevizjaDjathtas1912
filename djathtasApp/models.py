@@ -54,6 +54,10 @@ class ArtikujInfomues(models.Model):
     title = models.CharField(max_length=100)
     description = CKEditor5Field('Description', config_name='default')
     image = models.ImageField(upload_to='artikujt_images/', blank=True, null=True)
+    published_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ['-published_at']
     
     def __str__(self):
         return self.title
