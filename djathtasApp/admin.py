@@ -15,4 +15,4 @@ admin.site.register(Anetarsimi,AnetarsimiAdmin)
 admin.site.register(ArtikujInfomues)
 admin.site.register(ArtikujImage)
 admin.site.register(ArtikujVideo)
-admin.site.register(Prova)
+

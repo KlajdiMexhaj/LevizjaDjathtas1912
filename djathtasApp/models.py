@@ -74,7 +74,3 @@ class ArtikujVideo(models.Model):
         return f"Video for{self.artikuj.title}"
 
 
-class Prova(models.Model):
-    text = CKEditor5Field('Description', config_name='default')
-    def __str__(self):
-        return self.text
