@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 {% extends "base/index.html" %}
-{% block title %} Artikull Detail {% endblock %}
+{% block title %}{{ artikull.title }}{% endblock %}
 {% load static %}
 {% load embed_video_tags %}
+{% block meta_tags %}
+    <meta property="og:title" content="{{ artikull.title }}">
+    <meta property="og:description" content="{{ artikull.description|truncatewords:20 }}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{{ artikull.image.url }}">
+    <meta property="og:image:alt" content="{{ artikull.title }} Image">
 
+{% endblock %}
+
+{% block twitter_tags %}
+    <meta name="twitter:title" content="{{ artikull.title }}">
+    <meta name="twitter:description" content="{{ artikull.description|truncatewords:20 }}">
+    <meta name="twitter:image" content="{{ artikull.image.url }}">
+{% endblock %}
 {% block content %}
 
 <br>
