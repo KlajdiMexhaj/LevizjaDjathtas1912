@@ -1,5 +1,15 @@
 {% load static %}
 
+<!-- Mini header for social media icons -->
+<div class="mini-header">
+  <div class="mini-header-container">
+    <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.youtube.com" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://www.tiktok.com" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+  </div>
+</div>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
       <!-- Navbar brand aligned to the left -->
@@ -24,6 +34,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'anetarsimi' %}">Anetarësohu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active special-link" aria-current="page" href="{% url 'votatediaspores' %}" >Votat e diaspores</a>
           </li>
           <form class="d-flex ms-3" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -50,3 +63,5 @@
       </div>
     </div>
   </nav>
+
+

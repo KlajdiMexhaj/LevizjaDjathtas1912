@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
 
-    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+
     path('djathtas1912-admin/', admin.site.urls),
     path('ckeditor5/', include('django_ckeditor_5.urls')),
     path('',include("djathtasApp.urls")),

@@ -147,6 +147,28 @@
 
 
 
+<div class="popup-container active" id="popup">
+    <div class="popup">
+        <button class="popup-close" onclick="closePopup()">✕</button>
+        <img src="{% static 'img/banner-web.jpg' %}" alt="Popup Image" class="popup-image">
+        <a href="{% url 'votatediaspores' %}" class="popup-link">Votoni për të ardhmen e atdheut</a>
+    </div>
+</div>
+
+<script>
+  function showPopup() {
+      document.getElementById('popup').classList.add('active');
+  }
+
+  function closePopup() {
+      document.getElementById('popup').classList.remove('active');
+  }
+
+  // Automatically show pop-up after a delay (optional)
+  window.onload = function () {
+    showPopup(); // Show the pop-up after 2 seconds
+  };
+</script>
 
 
 {% endblock %}

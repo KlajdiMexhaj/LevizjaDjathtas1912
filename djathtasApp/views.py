@@ -21,6 +21,8 @@ def video(request):
     return render(request, "video.html", context)
 
 def anetarsimi(request):
+
+
     if request.method == 'POST':
         Anetarsimi.objects.create(
             emer=request.POST.get('emer'),
@@ -64,3 +66,11 @@ def artikujtinfomues_detail(request, pk):
     artikull = get_object_or_404(ArtikujInfomues, pk=pk)
     context = {"artikull": artikull}
     return render(request, "artikujtinfomues_detail.html", context)
+
+def votatediaspores(request):
+    # Track visits to this URL
+    url_record, created = URLVisit.objects.get_or_create(url="/votat-e-diaspores/")
+    url_record.visit_count += 1
+    url_record.save()
+    context = {}
+    return render(request, "votatediaspores.html", context)

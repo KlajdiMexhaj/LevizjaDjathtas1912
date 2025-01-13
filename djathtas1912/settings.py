@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'djathtasApp',
     'django_ckeditor_5',
     'embed_video',
-    'admin_honeypot',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -53,7 +52,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    
+
 
 ]
 

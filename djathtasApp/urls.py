@@ -10,4 +10,5 @@ urlpatterns = [
     path('thank-you/', views.thank_you, name="thank_you"), 
     path('artikujt-infomues/', views.artikujinfomues, name='artikujtinfomues'),
     path('artikull/<int:pk>/', views.artikujtinfomues_detail, name='artikujtinfomues_detail'),
+    path("votat-e-diaspores/",views.votatediaspores,name="votatediaspores"),
 ]

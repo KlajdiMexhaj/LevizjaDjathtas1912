@@ -78,3 +78,9 @@ class ArtikujVideo(models.Model):
         return f"Video for{self.artikuj.title}"
 
 
+class URLVisit(models.Model):
+    url = models.CharField(max_length=50, unique=True)  # URL to track
+    visit_count = models.PositiveIntegerField(default=0)  # Visit count
+
+    def __str__(self):
+        return f"{self.url} - {self.visit_count} visits"

@@ -16,3 +16,7 @@ admin.site.register(ArtikujInfomues)
 admin.site.register(ArtikujImage)
 admin.site.register(ArtikujVideo)
 
+@admin.register(URLVisit)
+class URLVisitAdmin(admin.ModelAdmin):
+    list_display = ('url', 'visit_count')  # Display the URL and visit count
+    search_fields = ('url',)  # Enable search by URL

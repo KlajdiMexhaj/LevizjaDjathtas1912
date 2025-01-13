@@ -1,7 +1,3 @@
-
-.navbar-brand img{
-    width: 100px;
-}
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +5,75 @@
     font-family: Arial, sans-serif;
 }
 
+/* Mini Header */
+.mini-header {
+    background-color: #061d76; /* Your specified background color */
+    width: 100%; /* Full width */
+    height: 40px; /* Increased height */
+    display: flex;
+    align-items: center; /* Vertically center the icons */
+    justify-content: flex-end; /* Align icons to the right */
+  }
+  
+  .mini-header-container {
+    display: flex;
+    gap: 20px; /* Spacing between icons */
+    padding-right: 80px; /* Padding on the right */
+  }
+  
+  .social-icon {
+    color: white; /* Icon color */
+    font-size: 22px; /* Small icon size */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .social-icon:hover {
+    color: #c30015; /* Change icon color on hover */
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .mini-header {
+      height: 50px; /* Slightly larger height for smaller screens */
+    }
+  
+    .social-icon {
+      font-size: 20px; /* Reduce icon size */
+      padding-right: 5px; /* Adjust spacing */
+    }
+  }
 
+.navbar-brand img{
+    width: 100px;
+}
+
+
+/* Flash animation for the special link */
+@keyframes flashColors {
+    0% {
+        color: #061d76; /* First color */
+    }
+    50% {
+        color: #c30015; /* Second color */
+    }
+    100% {
+        color: #061d76; /* Back to the first color */
+    }
+}
+
+/* Apply styles to the special link with high specificity */
+.navbar .nav-item > .special-link {
+    font-weight: bold !important;
+    font-size: 1.05rem !important; /* Increase font size */
+    animation: flashColors 1s infinite !important; /* Flashing effect */
+    margin-bottom: 0px !important; /* Adds margin-bottom */
+}
+
+/* Hover effect for special link */
+.navbar .nav-item > .special-link:hover {
+    text-decoration: none !important; /* Remove underline on hover */
+}
 /* Fullscreen section with background image */
 .hero-section {
     position: relative;
@@ -1774,15 +1838,489 @@ button.next {
 
 
 
+/* ----------------------------------POP UP --------------------------------------- */
+/* Pop-up container styles */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s ease;
+}
+
+/* Show the pop-up */
+.popup-container.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Pop-up box styles */
+.popup {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 1000px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: popUpAnimation 0.5s ease-out;
+}
+
+/* Close button styled as an X */
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #000;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.popup-close:hover {
+    color: #007bff;
+}
+
+/* Pop-up image */
+.popup-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Pop-up title */
+.popup-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Pop-up text */
+.popup-text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Pop-up link */
+.popup-link {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.popup-link:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes popUpAnimation {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 
 
 
 
+/* -------------------------------------------------VOTAT E DIASPORES----------------------------------------- */
+/* Base styles for the section */
+#votatediaspores {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Style for the title */
+#votatediaspores .title {
+    color: #061d76; /* Blue color */
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 10px 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for the title */
+#votatediaspores .title:hover {
+    transform: scale(1.1);
+    color: #c30015; /* Red color */
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    #votatediaspores .title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #votatediaspores .title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #votatediaspores .title {
+        font-size: 1.5rem;
+    }
+}
 
 
 
 
+/* Base styles for buttons */
+#votatediaspores .button-container {
+    margin-top: 30px;
+}
 
+#votatediaspores .btn {
+    display: inline-block;
+    padding: 16px 40px; /* Increased padding for larger buttons */
+    font-size: 1.1rem; /* Larger font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Primary button styles */
+#votatediaspores .primary-btn {
+    background-color: #061d76; /* Blue color */
+    color: white;
+    border: 2px solid #061d76;
+}
+
+#votatediaspores .primary-btn:hover {
+    background-color: #c30015; /* Red color */
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Secondary button styles */
+#votatediaspores .secondary-btn {
+    background-color: transparent;
+    color: #061d76; /* Blue color */
+    border: 2px solid #061d76;
+}
+
+#votatediaspores .secondary-btn:hover {
+    background-color: #061d76;
+    color: white;
+    transform: scale(1.05);
+}
+.secondary-btn i {
+    margin-right: 10px; /* Space between the icon and text */
+    font-size: 1.3rem;
+    align-items: center;
+}
+
+
+/* Responsive button styles */
+@media (max-width: 768px) {
+    #votatediaspores .btn {
+        font-size: 1.2rem; /* Adjust font size for medium screens */
+        padding: 14px 30px; /* Adjust padding for better fit */
+    }
+}
+
+@media (max-width: 480px) {
+    #votatediaspores .btn {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        padding: 12px 24px; /* Adjust padding for smaller screens */
+    }
+}
+
+
+
+/* Style for votatediasporesfirst section */
+#votatediasporesfirst {
+    padding: 30px 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#votatediasporesfirst .content h2 {
+    font-size: 2.2rem; /* Slightly larger heading */
+    font-weight: 600; /* Slightly bolder text */
+    color: #061d76; /* Blue color */
+    margin-bottom: 20px;
+}
+
+#votatediasporesfirst .content p {
+    font-size: 1.2rem; /* Slightly larger text */
+    font-weight: 500; /* Slightly bolder text */
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Bold text for emphasis */
+#votatediasporesfirst .content p strong {
+    color: #c30015; /* Red color for emphasis */
+    font-weight: bold;
+}
+
+/* Hover effect for paragraphs */
+#votatediasporesfirst .content p:hover {
+    color: #061d76; /* Change text color to blue on hover */
+    cursor: pointer;
+    transform: translateX(5px); /* Subtle movement on hover */
+    transition: all 0.3s ease;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    #votatediasporesfirst .content h2 {
+        font-size: 1.7rem; /* Slightly larger heading for mobile */
+    }
+
+    #votatediasporesfirst .content p {
+        font-size: 1.1rem; /* Slightly larger text for smaller screens */
+    }
+
+    #votatediasporesfirst {
+        padding: 20px 15px; /* Adjust padding for better fit */
+    }
+}
+
+@media (max-width: 480px) {
+    #votatediasporesfirst .content h2 {
+        font-size: 1.4rem; /* Slightly larger heading for small screens */
+    }
+
+    #votatediasporesfirst .content p {
+        font-size: 1rem; /* Slightly larger text */
+    }
+
+    #votatediasporesfirst {
+        padding: 15px 10px; /* Adjust padding for better fit */
+    }
+}
+
+
+/* Style for votatediasporessecond section */
+#votatediasporessecond {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title styling */
+#votatediasporessecond .content h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #061d76;
+    margin-bottom: 20px;
+}
+
+/* Video container styling */
+#votatediasporessecond .video-container {
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+#votatediasporessecond .video-container iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 10px;
+}
+
+/* Paragraph styling */
+#votatediasporessecond .content p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Steps Section */
+#votatediasporessecond .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+#votatediasporessecond .step-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#votatediasporessecond .step-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #061d76;
+    margin-bottom: 15px;
+}
+
+#votatediasporessecond .step-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Hover effect for the step cards */
+#votatediasporessecond .step-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    #votatediasporessecond .content h2 {
+        font-size: 2.2rem;
+    }
+
+    #votatediasporessecond .content p {
+        font-size: 1.1rem;
+    }
+
+    #votatediasporessecond .step-card h3 {
+        font-size: 1.3rem;
+    }
+
+    #votatediasporessecond .step-card p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #votatediasporessecond .content h2 {
+        font-size: 1.8rem;
+    }
+
+    #votatediasporessecond .step-card h3 {
+        font-size: 1.2rem;
+    }
+
+    #votatediasporessecond .step-card p {
+        font-size: 0.9rem;
+    }
+
+    #votatediasporessecond {
+        padding: 30px 15px;
+    }
+}
+
+/* Style for the Required Documents Section */
+#required-documents {
+    padding: 40px 20px;
+    background-color: #e7f5ff;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Style */
+#required-documents h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+/* Documents List */
+#required-documents .documents-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#required-documents .documents-list li {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#required-documents .documents-list li strong {
+    font-weight: bold;
+    color: #34495e;
+}
+
+#required-documents .sub-list {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+#required-documents .sub-list li {
+    background-color: #f9f9f9;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover Effect for List Items */
+#required-documents .documents-list li:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #required-documents {
+        padding: 30px 15px;
+    }
+    #required-documents .documents-list li {
+        font-size: 1rem;
+        padding: 15px;
+    }
+    #required-documents .sub-list li {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
 
 /* ------------------------------FOOTER STYLE SECTION------------------------------------- */
